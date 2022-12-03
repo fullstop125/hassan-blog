@@ -1,3 +1,4 @@
+
 <div class="d-flex align-items-center flex-column mt-5">
   <div class="card mb-3" style="width: 540px">
     <div class="card-header">
@@ -18,7 +19,14 @@
     <div class="card-body">
       <p class="card-text"><%= @post.text %></p>
     </div>
+
+    <div class="card-footer">
+        <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |f| %>
+<%= f.submit "Like", class:"btn btn-outline-primary" %>
+<% end %> 
+    </div>
   </div>
+  <%= link_to "Add New Comment", new_user_post_comment_path(user_id: @user.id, post_id: @post.id), class:"btn btn-primary mb-3" %> 
   <ul class="list-group mb-3" style="width: 540px;">
     <% @comments.each do |comment| %>
     <li class="list-group-item"><%= comment.author.name %>: <%= comment.text%></li>
