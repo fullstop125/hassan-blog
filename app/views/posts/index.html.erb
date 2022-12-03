@@ -1,1 +1,44 @@
-<h1>Here is a list of posts for a given user</h1>
+<div class="d-flex align-items-center flex-column mt-5">
+  <div class="card mb-3" style="width: 540px">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="<%= @user.photo %>"
+          class="img-fluid rounded-start"
+          alt="..."
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= @user.name %></h5>
+          <p class="card-text">
+            <small class="text-muted">
+              Number of posts: <%= @user.posts_counter %></small
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% @posts.each do |post| %> <%= link_to user_post_path(@user.id,post.id),
+  class:"nav-link" do %>
+  <div class="card mb-3" style="width: 540px">
+    <h5 class="card-header"><%= post.title %></h5>
+    <div class="card-body">
+      <p class="card-text"><%= post.text %></p>
+    </div>
+
+    <div class="card-footer d-flex gap-3">
+      <small class="text-muted"> Comments: <%= post.comments_counter %> </small>
+      <small class="text-muted"> Likes: <%= post.likes_counter %> </small>
+    </div>
+  </div>
+  <% end %>
+  <div class="card mb-3" style="width: 540px">
+    <% post.recent_comments.each do |comment| %> <%= post.author.name %> : <%=
+    comment.text %> <% end %>
+  </div>
+  <% end%>
+
+  <button class="btn btn-primary my-3">Pagination</button>
+</div>

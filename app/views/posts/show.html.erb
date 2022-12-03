@@ -1,1 +1,27 @@
-<h1>Here is a post by id</h1>
+<div class="d-flex align-items-center flex-column mt-5">
+  <div class="card mb-3" style="width: 540px">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-7">
+          <p><%= @post.title %> by <%= @user.name %></p>
+        </div>
+        <div class="col-md-5">
+          <div class="d-flex justify-content-end gap-3">
+            <small class="text-muted"
+              >Comments: <%= @post.comments_counter %></small
+            >
+            <small class="text-muted"> Likes: <%= @post.likes_counter %></small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= @post.text %></p>
+    </div>
+  </div>
+  <ul class="list-group mb-3" style="width: 540px;">
+    <% @comments.each do |comment| %>
+    <li class="list-group-item"><%= comment.author.name %>: <%= comment.text%></li>
+    <% end %>
+    </ul> 
+</div>
