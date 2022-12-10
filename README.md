@@ -185,11 +185,11 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
+> Describe 1 - 2 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **user authentication**
+- [ ] **CRUD operations**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -227,17 +227,17 @@ I would like to thank...
 
 ## ❓ FAQ <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+> Questions for new developers would ask when they decide to use your project.
 
-- **[Question_1]**
+- **How I can run this project?**
 
-  - [Answer_1]
+- After cloning repository, run rails s. After that, you will see you will see the homepage of the project.
 
-- **[Question_2]**
+- **How I can install rails**
 
-  - [Answer_2]
+- Install the rails by using `gem install rails`.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
 <!-- LICENSE -->
 
