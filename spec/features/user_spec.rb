@@ -23,7 +23,8 @@ RSpec.describe User, type: :system do
 
     it "When I click on a user, I am redirected to that user's show page." do
       User.delete_all
-      user = User.create(name: 'John', posts_counter: 30, photo: 'https://randomuser.me/api/portraits/men/70.jpg', bio: 'Teacher from Poland.')
+      user = User.create(name: 'John', posts_counter: 30, photo: 'https://randomuser.me/api/portraits/men/70.jpg',
+                         bio: 'Teacher from Poland.')
       visit root_path(user)
       click_on 'John'
       visit user_path(user.id)
